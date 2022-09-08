@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <title>Ahorcado</title>
+
+</head>
+<body>
+    
+    <header>
+        <audio src="sonidos/tiza2.mp3" autoplay></audio>
+        <h1>horcado</h1>
+    </header>
+
+    <main>
+        
+        <section class="area">            
+            <input id= "input" type="text" placeholder="Ingrese su palabra" autofocus>
+            <canvas id = 'figura' height="310" width="400"></canvas>
+            
+        </section>
+
+        <section class="area">
+            <label id="restrict">Sin caracteres especiales</label>
+            <label id="word"></label>
+        </section>
+
+
+        
+
+        <section >
+            <div class="letters">
+
+                <button class="letter" id = "A" onclick="letra('A')"> A </button>
+                <button class="letter" id = "B" onclick="letra('B')"> B </button>
+                <button class="letter" id = "C" onclick="letra('C')"> C </button>
+                <button class="letter" id = "D" onclick="letra('D')"> D </button>
+                <button class="letter" id = "E" onclick="letra('E')"> E </button>
+                <button class="letter" id = "F" onclick="letra('F')"> F </button>
+                <button class="letter" id = "G" onclick="letra('G')"> G </button>
+                <button class="letter" id = "H" onclick="letra('H')"> H </button>
+                <button class="letter" id = "I" onclick="letra('I')"> I </button>
+
+            </div>
+            
+            <div class="letters1">
+                <button class="letter" id = "J" onclick="letra('J')"> J </button>
+                <button class="letter" id = "K" onclick="letra('K')"> K </button>
+                <button class="letter" id = "L" onclick="letra('L')"> L </button>
+                <button class="letter" id = "M" onclick="letra('M')"> M </button>
+                <button class="letter" id = "N" onclick="letra('N')"> N </button>
+                <button class="letter" id = "Ñ" onclick="letra('Ñ')"> Ñ </button>
+                <button class="letter" id = "O" onclick="letra('O')"> O </button>
+                <button class="letter" id = "P" onclick="letra('P')"> P </button>
+                <button class="letter" id = "Q" onclick="letra('Q')"> Q </button>
+
+            </div>
+            
+            <div class="letters2">
+                <button class="letter" id = "R" onclick="letra('R')"> R </button>
+                <button class="letter" id = "S" onclick="letra('S')"> S </button>
+                <button class="letter" id = "T" onclick="letra('T')"> T </button>
+                <button class="letter" id = "U" onclick="letra('U')"> U </button>
+                <button class="letter" id = "V" onclick="letra('V')"> V </button>
+                <button class="letter" id = "W" onclick="letra('W')"> W </button>
+                <button class="letter" id = "X" onclick="letra('X')"> X </button>
+                <button class="letter" id = "Y" onclick="letra('Y')"> Y </button>
+                <button class="letter" id = "Z" onclick="letra('Z')"> Z </button>
+
+            </div>
+            
+            
+        </section>
+            
+
+        <div class="buttons_Ppal">
+            <button class="button_start" onclick=iniciar()>Iniciar Juego</button>
+            
+            <button class="button_add" onclick=agregarPalabra()>Agregar palabra</button>
+            
+            <button class="button_save">Guardar</button>
+
+            <button class="button_gameN"  onclick=iniciar()>Nuevo</button>
+            <button class="button_gameS" onclick=restaurar()>Volver</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/AndresFQAgudelo/ahorcado.git"><img src="imagenes/github.png" alt="github"></a></li>
+            <li> <p>Andres Felipe Quebrada Agudelo</p></li>
+        </ul>
+        
+    </footer>
+
+    <script src="game.js"></script>
+    <script src="addword.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+
+
+</body>
+</html>

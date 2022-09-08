@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'cheveuxdange';
+    src: url("fonts/Cheveuxdange.ttf");
+}
+
+body{
+    background-image: url("imagenes/ahorcado.png");
+    
+}
+
+header{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+h1{
+    font-family: "cheveuxdange";
+    color:white;
+    font-size: 80px;
+    margin: 20px 0 20px 0;
+}
+
+h1::before{
+    content: url("imagenes/Vector.svg");
+    position: relative;
+    left: -5px;
+}
+
+.area{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#text{
+    background: white;
+}
+
+#input{
+    background: transparent;
+    font-family: "cheveuxdange";
+    color:white;
+    font-size: 20px; 
+    font-weight: bold;
+    
+}
+
+#word{
+    background: transparent;
+    font-family: "cheveuxdange";
+    color:white;
+    font-size: 50px; 
+    letter-spacing: 20px;
+
+    
+    
+}
+
+#restrict{
+    display: flex;
+    justify-content: center;
+    font-family: "cheveuxdange";
+    color:black;
+    font-size: 20px;
+    font-weight: bold; 
+    margin-top: 10px;
+}
+
+#restrict::before{
+    content: " (!) ";
+}
+
+
+.letters, .letters1,.letters2 {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.letter{
+    background: transparent;
+    border-color: white;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 5%;
+
+    margin: 10px;
+    
+    font-family: "cheveuxdange";
+    color:white;
+    font-size: 20px; 
+
+    transition: 100ms all;
+}
+
+.letter:hover, .button_start:hover, .button_add:hover, .button_save:hover, .button_gameN:hover, .button_gameS:hover{
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+.buttons_Ppal {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.button_start, .button_add, .button_save, .button_gameN, .button_gameS{
+    background: transparent;
+    border-color: white;
+    border-width: 3px;
+    border-style: double;
+    border-radius: 5%;
+
+    margin: 10px;
+    
+    font-family: "cheveuxdange";
+    color:white;
+    font-size: 30px;
+
+}
+
+footer{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+
+    font-family: "cheveuxdange";
+    color:black;
+    font-weight: bold;
+    font-size:20px;
+    margin: 20px 0 20px 0;
+}
+
+img{
+    width: 50px;
+}
+li{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
