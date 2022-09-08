@@ -12,8 +12,8 @@ var Palabra = "";
 var secretword = [];
 var errores = 0;
 var aciertos = 0;
-var PalabrasList = ["HTML", "CSS", "JAVASCRIPT", "ALURA", "ONE", "DIV", "PROGRAMACION", 
-"AHORCADO", "WEB", "VIRTUAL", "AYUDA", "ARMADO", "COCINA", "INSPECCIONAR"]
+PalabrasList = ['HTML', 'CSS', 'JAVASCRIPT', 'ALURA', 'ONE', 'DIV',
+ 'PROGRAMACION', 'AHORCADO', 'WEB', 'VIRTUAL', 'AYUDA', 'ARMADO', 'COCINA', 'INSPECCIONAR']
 
 
 
@@ -33,8 +33,6 @@ function cargarDatos(){
     for (let index = 0; index < PalabrasList.length; index++) {  
         localStorage.setItem(index, PalabrasList[index])    
     }
-
-    console.log(PalabrasList)
 }
 
 function restaurar(){
