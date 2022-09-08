@@ -60,7 +60,6 @@ function addword(){
 
 } 
 
-
 function limpiarAdd(){
     document.querySelector("footer").style.display = "none"
     document.querySelector(".button_add").style.display = "none";
