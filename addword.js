@@ -1,4 +1,4 @@
-
+/*
 function agregarPalabra(){
     const music = new Audio('sonidos/tiza.mp3')
     music.play()
@@ -57,7 +57,7 @@ function agregarPalabra(){
     })
 
 
-} 
+} */
 
 
 function limpiarAdd(){
@@ -70,4 +70,54 @@ function limpiarAdd(){
     document.querySelector("#restrict").style.display = "";
     document.querySelector("label").style.display = "";
     document.querySelector(".button_gameS").style.display = "";
+}
+
+
+function addword(){
+    limpiarAdd();
+    //window.addEventListener('load', () => {
+
+        let baseDatos;
+        let solicitudConexion = indexedDB.open('palabrasBD', 1);
+
+        solicitudConexion.onsuccess = function(event){
+            baseDatos = event.target.result;
+        }
+
+        solicitudConexion.onerror = function(event){
+            console.log('ERROR')
+        }
+
+        solicitudConexion.onupgradeneeded = function(event){
+            baseDatos = event.target.result;
+
+            let palabras = baseDatos.createObjectStore('palabras', {autoIncrement: true})
+        }
+
+
+        let guardar = document.querySelector('.button_save')
+
+        guardar.addEventListener('click', function(event){
+            let contenido = document.querySelector('#input').value
+            console.log(contenido)
+
+            if (contenido.length){
+                let transaccion = baseDatos.transaction(['palabras'], 'readwrite')
+                let palabras = transaccion.objectStore('palabras')
+                let palabra = contenido
+                palabras.add(palabra)
+
+                transaccion.oncomplete = function(){
+                    console.log("Todo Bien")
+                }
+                transaccion.onerror=function(){
+                    console.log("Error al almacenar")
+                }
+            }else{
+                console.log('VACIO')
+            }
+        })
+   // });
+
+
 }

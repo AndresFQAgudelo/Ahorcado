@@ -12,18 +12,29 @@ var Palabra = "";
 var secretword = [];
 var errores = 0;
 var aciertos = 0;
+var PalabrasList = []
 
 
 
 function iniciar() {
     const music = new Audio('sonidos/tiza.mp3')
     music.play()
+    cargarDatos();
     limpiar();
     ponerguiones();
     dibujar(false);
     dibujarLetra();
 
     
+}
+
+function cargarDatos(){
+    for (let index = 0; index < localStorage.length; index++) {  
+        dato = localStorage.getItem(index)    
+        PalabrasList.push(dato)  
+    }
+
+    console.log(PalabrasList)
 }
 
 function restaurar(){
