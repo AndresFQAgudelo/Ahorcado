@@ -145,7 +145,26 @@ li{
     justify-content: center;
 }
 
+@media screen and (max-width: 700px) {
+    #word{
+        letter-spacing: 10px;
+        font-size: 30px;
+    }
 
+    .letter{
+        margin: 5px;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    h1{
+        font-size: 50px;
+    }
+
+    
+    
+}
 
 
 
