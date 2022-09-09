@@ -12,12 +12,14 @@ var Palabra = "";
 var secretword = [];
 var errores = 0;
 var aciertos = 0;
+var block = false;
 PalabrasList = ['HTML', 'CSS', 'JAVASCRIPT', 'ALURA', 'ONE', 'DIV',
  'PROGRAMACION', 'AHORCADO', 'WEB', 'VIRTUAL', 'AYUDA', 'ARMADO', 'COCINA', 'INSPECCIONAR']
 
 
 
 function iniciar() {
+    block  =false
     const music = new Audio('sonidos/tiza.mp3')
     music.play()
     cargarDatos();
@@ -155,6 +157,7 @@ function dibujar(nuevo){
                     text: "La palabra era " + Palabra,  
                     
                 })
+                block = true;
                 break;
     
         
@@ -174,33 +177,34 @@ function dibujarLetra(){
 
 function letra(letra){
 
-    if (Palabra.includes(letra)){
-        for (i =0; i< Palabra.length; i++){
-            if(Palabra[i] == letra){
-                aciertos += 1;
-                secretword[i] = letra;
-                dibujarLetra();
-                ganaste();
-                const music = new Audio('sonidos/tiza.mp3')
-                music.play()
-               
-                document.getElementById(letra).style.display = "none"
-            }
-
+    if (!block ){
+        if (Palabra.includes(letra)){
+            for (i =0; i< Palabra.length; i++){
+                if(Palabra[i] == letra){
+                    aciertos += 1;
+                    secretword[i] = letra;
+                    dibujarLetra();
+                    ganaste();
+                    const music = new Audio('sonidos/tiza.mp3')
+                    music.play()
+                   
+                    document.getElementById(letra).style.display = "none"
+                }
+    
+            } 
+        }else{
+            document.getElementById(letra).style.display = "none"
+            errores+=1
+            dibujar()
+            const music = new Audio('sonidos/tiza2.mp3')
+            music.play()
+            
+    
         }
-       
         
-        
-        
-    }else{
-        document.getElementById(letra).style.display = "none"
-        errores+=1
-        dibujar()
-        const music = new Audio('sonidos/tiza2.mp3')
-        music.play()
-        
-
     }
+
+    
 
 }
 
@@ -209,6 +213,7 @@ function ganaste(){
     temp = temp.replace(/,/g, "")
 
     if (Palabra == temp){
+        block = true
         const music = new Audio('sonidos/win.mp3')
         music.play()
         swal.fire({
@@ -216,6 +221,7 @@ function ganaste(){
             text: "La palabra era " + Palabra,
             
         })
+        
 
     }
 }
